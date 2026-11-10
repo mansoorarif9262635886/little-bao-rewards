@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Bao - Scan & Claim Rewards</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        baoTeal: '#1c3a38',
+                        baoTealDark: '#122624',
+                        baoCream: '#f2ead1',
+                        baoYellow: '#d1dc8b',
+                        baoDark: '#0d1a19'
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-pattern {
+            background-color: #0d1a19;
+            background-image: radial-gradient(#1c3a38 1px, transparent 1px), radial-gradient(#1c3a38 1px, #0d1a19 1px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+        }
+    </style>
+</head>
+
+<body class="bg-pattern text-baoCream font-sans min-h-screen flex flex-col items-center justify-start p-3 sm:p-6">
+
+    <!-- MAIN CUSTOMER MOBILE APP -->
+    <main id="customerView"
+        class="w-full max-w-md bg-baoTealDark border border-baoYellow/30 rounded-3xl shadow-2xl overflow-hidden flex flex-col mt-4">
+
+        <!-- HEADER SECTION -->
+        <header
+            class="relative bg-gradient-to-b from-baoTeal via-baoTealDark to-baoDark p-6 text-center border-b border-baoYellow/30 overflow-hidden">
+            <!-- Decorative Subtle Glow -->
+            <div
+                class="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-baoYellow/15 rounded-full blur-2xl pointer-events-none">
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center">
+                <!-- TOP LOGO IMAGE WITH PNG & FALLBACK -->
+                <div
+                    class="w-24 h-24 rounded-full bg-baoCream border-2 border-baoYellow flex items-center justify-center mb-3 shadow-xl backdrop-blur-md overflow-hidden p-1 relative">
+                    <img src="Dark Green Cute and Playful Kitchen Restaurant Logo_20260903_115345_0000-1.png"
+                        onerror="this.style.display='none'; document.getElementById('logoFallback').classList.remove('hidden');"
+                        alt="Little Bao Logo" class="w-full h-full object-cover rounded-full">
+
+                    <!-- Fallback Icon if image file is missing -->
+                    <div id="logoFallback" class="hidden w-full h-full flex items-center justify-center p-2">
+                        <svg class="w-full h-full text-baoTeal fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8 2 4 5 4 10c0 4.5 3.5 8.5 8 8.5s8-4 8-8.5c0-5-4-8-8-8zm0 2c1.5 0 3 1.2 3.5 2.5-.5-.2-1.2-.3-2-.3-2.5 0-4.5 1.8-5 4.1C7 9.5 6 8 6 6.5 6 4.5 8.5 4 12 4z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <h1 class="font-heading text-4xl font-extrabold tracking-wider text-baoCream uppercase drop-shadow">
+                    Little Bao</h1>
+                <p class="text-[10px] font-bold text-baoYellow uppercase tracking-widest mt-1">Cafe & Family Restaurant
+                </p>
+                <p class="text-xs italic text-baoCream/80 font-medium tracking-wide mt-1">"Where Good Food Meets Good
+                    Mood"</p>
+                <div
+                    class="mt-3 inline-flex items-center gap-1.5 text-[11px] bg-black/30 text-baoCream px-3 py-1 rounded-full border border-baoYellow/20">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-baoYellow"></i> Nandhagar, Barasat
+                </div>
+            </div>
+        </header>
+
+        <!-- OPTIONS CONTAINER -->
+        <div class="p-5 space-y-4">
+
+            <div class="text-center py-1">
+                <h2 class="text-sm font-bold text-baoYellow uppercase tracking-widest font-heading">Choose An Option For
+                    Free Food</h2>
+                <p class="text-xs text-baoCream/60 mt-1">Select below to review or collaborate with us!</p>
+            </div>
+
+            <!-- OPTION 1: GOOGLE REVIEW -->
+            <a href="https://maps.app.goo.gl/HzMkoj43xyrZVtut6" target="_blank" rel="noopener noreferrer"
+                class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-baoTeal via-teal-900 to-baoDark border-2 border-baoYellow/40 p-4 transition-all duration-300 hover:border-baoYellow hover:scale-[1.02] active:scale-[0.98] shadow-xl block">
+
+                <div class="flex items-start gap-3.5">
+                    <!-- Icon Box -->
+                    <div
+                        class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shrink-0 p-1 border border-baoYellow/30 group-hover:border-baoYellow transition-colors shadow-sm">
+                        <img src="Google-Review-Logo.png" alt="Google Reviews" class="w-full h-full object-contain">
+                    </div>
+
+                    <!-- Main Info -->
+                    <div class="flex-1 text-left">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-base text-baoCream group-hover:text-baoYellow transition">1.
+                                Google Review</span>
+                            <span
+                                class="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Free
+                                Reward</span>
+                        </div>
+
+                        <!-- Food Reward Box -->
+                        <div class="mt-2 p-2.5 bg-black/40 rounded-xl border border-baoYellow/20">
+                            <p class="text-[11px] text-baoYellow/80 font-bold uppercase tracking-wide">You Get Free
+                                Food:</p>
+                            <p class="text-sm font-extrabold text-baoCream mt-0.5 flex items-center gap-1.5">
+                                🍩 Hot Golab Jamun <span class="text-baoCream/50 font-normal text-xs">OR</span> ☕
+                                Classic Coffee
+                            </p>
+                        </div>
+
+                        <!-- Action Callout -->
+                        <div class="mt-2.5 flex items-center justify-between text-xs font-semibold text-baoYellow">
+                            <span>Tap to Review & Rate 5★</span>
+                            <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- OPTION 2: INSTA COLLAB -->
+            <a href="https://www.instagram.com/littlebao_barasat/" target="_blank" rel="noopener noreferrer"
+                class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-900 via-purple-900 to-baoDark border-2 border-pink-500/40 p-4 transition-all duration-300 hover:border-pink-400 hover:scale-[1.02] active:scale-[0.98] shadow-xl block">
+
+                <div class="flex items-start gap-3.5">
+                    <!-- Icon Box -->
+                    <div
+                        class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shrink-0 overflow-hidden shadow-sm border border-pink-500/30 group-hover:border-pink-400 transition-colors p-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram" class="w-full h-full object-contain">
+                    </div>
+
+                    <!-- Main Info -->
+                    <div class="flex-1 text-left">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-base text-baoCream group-hover:text-pink-200 transition">2.
+                                Insta Collab / Tag</span>
+                            <span
+                                class="text-[10px] bg-pink-500/20 text-pink-300 border border-pink-500/40 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Free
+                                Reward</span>
+                        </div>
+
+                        <!-- Food Reward Box -->
+                        <div class="mt-2 p-2.5 bg-black/40 rounded-xl border border-pink-500/30">
+                            <p class="text-[11px] text-pink-300/80 font-bold uppercase tracking-wide">You Get Free Food:
+                            </p>
+                            <p class="text-sm font-extrabold text-baoCream mt-0.5 flex items-center gap-1.5 flex-wrap">
+                                🫓 Fresh Kulcha <span class="text-baoCream/50 font-normal text-xs">OR</span> 🥤 Shake /
+                                Mojito
+                            </p>
+                        </div>
+
+                        <!-- Action Callout -->
+                        <div class="mt-2.5 flex items-center justify-between text-xs font-semibold text-pink-300">
+                            <span>Tap to Visit & Collab</span>
+                            <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- OPTION 3: FACEBOOK COLLAB -->
+            <a href="https://www.facebook.com/share/1H6cor9iDR/" target="_blank" rel="noopener noreferrer"
+                class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-900 via-indigo-900 to-baoDark border-2 border-blue-500/40 p-4 transition-all duration-300 hover:border-blue-400 hover:scale-[1.02] active:scale-[0.98] shadow-xl block">
+
+                <div class="flex items-start gap-3.5">
+                    <!-- Icon Box -->
+                    <div
+                        class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shrink-0 overflow-hidden shadow-sm border border-blue-500/30 group-hover:border-blue-400 transition-colors p-1">
+                        <img src="png-clipart-facebook-logo-computer-icons-facebook-logo-facebook-thumbnail.png"
+                            alt="Facebook" class="w-full h-full object-contain">
+                    </div>
+
+                    <!-- Main Info -->
+                    <div class="flex-1 text-left">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-base text-baoCream group-hover:text-blue-200 transition">3.
+                                Facebook Collab / Tag</span>
+                            <span
+                                class="text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/40 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Free
+                                Reward</span>
+                        </div>
+
+                        <!-- Food Reward Box -->
+                        <div class="mt-2 p-2.5 bg-black/40 rounded-xl border border-blue-500/30">
+                            <p class="text-[11px] text-blue-300/80 font-bold uppercase tracking-wide">You Get Free Food:
+                            </p>
+                            <p class="text-sm font-extrabold text-baoCream mt-0.5 flex items-center gap-1.5 flex-wrap">
+                                🫓 Fresh Kulcha <span class="text-baoCream/50 font-normal text-xs">OR</span> 🥤 Shake /
+                                Mojito
+                            </p>
+                        </div>
+
+                        <!-- Action Callout -->
+                        <div class="mt-2.5 flex items-center justify-between text-xs font-semibold text-blue-300">
+                            <span>Tap to Visit & Collab</span>
+                            <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- SERVER CLAIM BUTTON -->
+            <div class="pt-2">
+                <button onclick="showClaimModal()"
+                    class="w-full py-3.5 bg-gradient-to-r from-baoYellow via-[#e5f0a3] to-baoYellow hover:brightness-110 text-baoTealDark font-black text-xs uppercase tracking-wider rounded-2xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2">
+                    <i data-lucide="gift" class="w-4 h-4"></i>
+                    <span>Show Mobile To Server To Claim</span>
+                </button>
+            </div>
+
+            <!-- CALL TO ACTION INFO -->
+            <div class="bg-black/30 border border-baoYellow/20 rounded-2xl p-3 text-center">
+                <p class="text-[11px] text-baoCream/70">
+                    💡 Simply present your active review or collab tag to our team member while ordering or paying your
+                    bill!
+                </p>
+            </div>
+
+            <!-- DIRECT PHONE CALL -->
+            <a href="tel:7980538396"
+                class="w-full py-2.5 bg-baoTeal border border-baoYellow/20 hover:border-baoYellow text-baoCream rounded-xl flex items-center justify-center gap-2 text-xs font-semibold transition">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-baoYellow"></i>
+                <span>Need Assistance? Call 7980538396</span>
+            </a>
+
+            <!-- TERMS & CONDITIONS LINK -->
+            <div class="text-center pt-1">
+                <button onclick="showTcModal()"
+                    class="text-[10px] text-baoCream/50 underline hover:text-baoYellow transition">Read Terms &
+                    Conditions</button>
+            </div>
+
+        </div>
+
+        <!-- FOOTER BRANDING -->
+        <footer class="p-4 bg-black/50 border-t border-baoYellow/10 text-center text-[11px] text-baoCream/50">
+            <p>© Little Bao Barasat • Where Good Food Meets Good Mood</p>
+        </footer>
+    </main>
+
+    <!-- TERMS & CONDITIONS MODAL -->
+    <div id="tcModal"
+        class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-sm w-full p-6 text-left relative shadow-2xl">
+            <button onclick="hideTcModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 p-1 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <h3 class="font-heading text-lg font-bold text-gray-900 border-b border-gray-200 pb-2 mb-3">Terms &
+                Conditions</h3>
+
+            <div class="space-y-3 text-xs text-gray-700 leading-relaxed font-medium">
+                <p><span class="font-bold text-baoTealDark">1. Availability:</span> All complimentary food items and
+                    beverages are subject to daily stock and availability. An alternative item of equal value may be
+                    provided at the restaurant's discretion.</p>
+                <p><span class="font-bold text-baoTealDark">2. Right to Modify:</span> Little Bao management reserves
+                    the right to amend, suspend, or terminate this promotional offer at any time without prior notice or
+                    liability.</p>
+                <p><span class="font-bold text-baoTealDark">3. Redemption:</span> Offer is valid for dine-in customers
+                    only. Limit one redemption per table/group per visit unless otherwise permitted by the staff.</p>
+                <p><span class="font-bold text-baoTealDark">4. Verification:</span> The reward must be claimed during
+                    the same visit the review or post is made. Staff must verify the active review, tag, or post on your
+                    device before serving the complimentary item.</p>
+            </div>
+
+            <button onclick="hideTcModal()"
+                class="mt-6 w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300 font-bold rounded-lg shadow-sm transition text-xs uppercase tracking-wider">
+                Close & Return
+            </button>
+        </div>
+    </div>
+
+    <!-- CLAIM MODAL OVERLAY -->
+    <div id="claimModal"
+        class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div
+            class="bg-baoTealDark border-2 border-baoYellow/50 rounded-3xl max-w-sm w-full p-6 text-center relative shadow-2xl">
+            <button onclick="hideClaimModal()" class="absolute top-4 right-4 text-baoCream/50 hover:text-white p-1">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div
+                class="w-16 h-16 rounded-full bg-baoYellow/10 text-baoYellow border border-baoYellow/30 flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="utensils" class="w-8 h-8"></i>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-baoCream">Show This To Server</h3>
+            <p class="text-xs text-baoCream/70 mt-1">Present your Google 5-Star Review or Collab screen to your server
+                to claim your food!</p>
+
+            <div class="my-5 p-3.5 bg-black/50 rounded-2xl border border-dashed border-baoYellow/40">
+                <span class="text-[10px] text-baoYellow/80 block uppercase tracking-widest font-semibold">Instant Free
+                    Food Pass</span>
+                <span class="font-mono text-2xl font-black text-baoYellow tracking-wider">FREE-BAO</span>
+            </div>
+
+            <button onclick="hideClaimModal()"
+                class="w-full py-3 bg-baoYellow text-baoTealDark font-black rounded-xl shadow-lg hover:brightness-110 transition text-xs uppercase tracking-wider">
+                Close & Return
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        lucide.createIcons();
+
+        function showClaimModal() {
+            document.getElementById("claimModal").classList.remove("hidden");
+        }
+        function hideClaimModal() {
+            document.getElementById("claimModal").classList.add("hidden");
+        }
+
+        function showTcModal() {
+            document.getElementById("tcModal").classList.remove("hidden");
+        }
+        function hideTcModal() {
+            document.getElementById("tcModal").classList.add("hidden");
+        }
+    </script>
+</body>
+
+</html>
